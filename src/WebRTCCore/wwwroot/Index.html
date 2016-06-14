@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>WebRTC</title>
+</head>
+<body>
+    <video id="video-src" autoplay controls></video>
+
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/webrtc-adapter/adapter.js"></script>
+    <script src="dev/js/main.js"></script>
+    <script>
+        $(function () {
+            main.createStream();
+        });
+    </script>
+</body>
+</html>
