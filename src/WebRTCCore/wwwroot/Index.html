@@ -3,17 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <title>WebRTC</title>
+    <link href="dev/css/style.css" rel="stylesheet" />
 </head>
 <body>
-    <video id="video-src" autoplay controls></video>
+    <div id="control">
+        <video id="video-src" autoplay></video>
+
+        <video id="remote-src" autoplay></video>
+
+        <button id="start-call">Call</button>
+
+        <button id="close-call">Close</button>
+
+    </div>
 
     <script src="lib/jquery/dist/jquery.js"></script>
-    <script src="lib/webrtc-adapter/adapter.js"></script>
-    <script src="dev/js/main.js"></script>
-    <script>
-        $(function () {
-            main.createStream();
-        });
-    </script>
+
+    <script src="dist/app.bundle.js"></script>
 </body>
 </html>

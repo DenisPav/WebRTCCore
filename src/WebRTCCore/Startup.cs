@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using WebRTCCore.Middleware;
 
 namespace WebRTCCore
 {
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services)
-        { }
+        public void ConfigureServices(IServiceCollection services) { }
 
         public void Configure(IApplicationBuilder app)
         {
+            JsonConvert.DefaultSettings = () => new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+
+            app.UseWebSockets();
+
+            app.UseMiddleware(typeof(WebsocketMiddleware));
+
             app.UseDefaultFiles();
 
             app.UseStaticFiles();

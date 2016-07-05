@@ -178,3 +178,4 @@ src/Hedgehog/wwwroot/lib/*
 .vs/restore.dg
 src/WebRTCCore/project.lock.json
 src/WebRTCCore/wwwroot/lib/*
+src/WebRTCCore/wwwroot/dist/*
